@@ -19,13 +19,13 @@ const Book = props => {
           <small className="text-muted">{volumeInfo.subtitle}</small>
         </h2>
         <div className="book-field">
-          <a href="#">{volumeInfo.authors.join(", ").trim()}</a> -{" "}
-          {volumeInfo.publishedDate.split("-")[0]}
+          <a href="#">{volumeInfo.authors && volumeInfo.authors.join(", ").trim()}</a> -{" "}
+          {volumeInfo.publishedDate && volumeInfo.publishedDate.split("-")[0]}
         </div>
         <p className="book-text">{volumeInfo.description}</p>
 
         <div className="categories">
-          {volumeInfo.categories.map(category => (
+          {volumeInfo.categories && volumeInfo.categories.map(category => (
             <Badge pill>{category}</Badge>
           ))}
         </div>
