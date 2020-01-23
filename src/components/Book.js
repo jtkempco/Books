@@ -1,4 +1,5 @@
 import React from "react";
+import { Badge } from "reactstrap";
 
 const Book = props => {
   const { volumeInfo } = props;
@@ -22,6 +23,12 @@ const Book = props => {
           {volumeInfo.publishedDate.split("-")[0]}
         </div>
         <p className="book-text">{volumeInfo.description}</p>
+
+        <div className="categories">
+          {volumeInfo.categories.map(category => (
+            <Badge pill>{category}</Badge>
+          ))}
+        </div>
       </div>
     </div>
   );
